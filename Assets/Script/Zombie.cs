@@ -71,7 +71,7 @@ public class Zombie : MonoBehaviour {
             {
                 //stop pathfind
                 m_agent.ResetPath();
-                m_ani.SetBool("atteck", true);
+                m_ani.SetBool("attack", true);
             }
         }
         // attck
@@ -89,7 +89,7 @@ public class Zombie : MonoBehaviour {
             m_transform.eulerAngles = new Vector3(0, angle, 0);
 
             // open attack
-            m_ani.SetBool("attck", false);
+            m_ani.SetBool("attack", false);
 
             // finish attck animation ->idle
             if (stateInfo.normalizedTime >= 1.0f)

@@ -11,13 +11,13 @@ public class FPSPlayer : MonoBehaviour {
     private float m_gravity = 2.0f;
     private Transform m_camTransform;
     private Vector3 m_camRot;
-    private float m_camHight = 4.5f;
+    private float m_camHight = 2.0f;
 
     //m16
     private Transform m_muzzlepoint;    // fire postion
     public LayerMask m_layer;           // 碰撞层
     public Transform m_fx;              // 射击目标时的特效
-    public AudioClip m_audio;
+    public AudioClip m_audio;           // 射击声音
     private float m_shootTimer = 0;     //射击间隔
 
 
@@ -45,6 +45,9 @@ public class FPSPlayer : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+        if(m_life!=0)
+        Screen.lockCursor = true;
+
         if (m_life <= 0) return;
 
         float rv = Input.GetAxis("Mouse Y"); // up -> down  
