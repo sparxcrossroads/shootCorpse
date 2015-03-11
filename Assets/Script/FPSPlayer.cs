@@ -100,13 +100,17 @@ public class FPSPlayer : MonoBehaviour {
                 out info,                                           //发生碰撞时保持光线投射信息
                 100,                                                //射线长度
                 m_layer);                                           //碰撞目标层
+
+            //print(hit);
             if (hit)
             {
                 if (info.transform.tag.CompareTo("Zombie") == 0)
                 {
                     Zombie zombie = info.transform.GetComponent<Zombie>();
+                    //print("hit-> :ssssssss");
                     zombie.OnDamage(1);
                 }
+                print(info.point.ToString());
                 Instantiate(m_fx, info.point, info.transform.rotation);
             }
         }

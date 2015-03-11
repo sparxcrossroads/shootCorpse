@@ -54,7 +54,9 @@
     <Compile Include="Assets\Script\AutoDestroy.cs" />
     <Compile Include="Assets\Script\FPSPlayer.cs" />
     <Compile Include="Assets\Script\GUI_Manager.cs" />
+    <Compile Include="Assets\Script\Sight.cs" />
     <Compile Include="Assets\Script\Zombie.cs" />
+    <Compile Include="Assets\Script\ZombieSpawn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

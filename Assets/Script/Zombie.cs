@@ -12,6 +12,13 @@ public class Zombie : MonoBehaviour {
     float m_timer = 0; // flash nav time
     int m_life = 15;
 
+    protected ZombieSpawn m_spawn;
+    public void Init(ZombieSpawn spawn)
+    {
+        m_spawn = spawn;
+        m_spawn.m_enemyCount++;
+    }
+
 	// Use this for initialization
 	void Start () {
         m_transform = this.transform;
@@ -106,13 +113,15 @@ public class Zombie : MonoBehaviour {
         {
             if (stateInfo.normalizedTime >= 1.0f) 
             {
+                m_spawn.m_enemyCount--;
+
                 GUI_Manager.Instance.SetScore(10);
                 Destroy(this.gameObject);
             }
         }
 	}
 
-    //change zombie heath  (ball ray  
+    //change zombie heath  (bullet ray  
     public void OnDamage(int damage)
     {
         m_life -= damage;
