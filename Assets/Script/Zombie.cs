@@ -17,6 +17,7 @@ public class Zombie : MonoBehaviour {
     {
         m_spawn = spawn;
         m_spawn.m_enemyCount++;
+        print(m_spawn.m_enemyCount.ToString());
     }
 
 	// Use this for initialization
@@ -113,6 +114,8 @@ public class Zombie : MonoBehaviour {
         {
             if (stateInfo.normalizedTime >= 1.0f) 
             {
+                //print(m_spawn.m_enemyCount.ToString());
+
                 m_spawn.m_enemyCount--;
 
                 GUI_Manager.Instance.SetScore(10);

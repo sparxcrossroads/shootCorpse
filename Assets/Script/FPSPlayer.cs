@@ -110,7 +110,7 @@ public class FPSPlayer : MonoBehaviour {
                     //print("hit-> :ssssssss");
                     zombie.OnDamage(1);
                 }
-                print(info.point.ToString());
+                //print(info.point.ToString());
                 Instantiate(m_fx, info.point, info.transform.rotation);
             }
         }
